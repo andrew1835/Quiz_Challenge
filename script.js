@@ -8,6 +8,7 @@ var startButton = document.querySelector("#startQuiz")
 
 
 
+
 // TODO: 2. When the "Start Quiz" button is clicked, clear the main content of the page (except for High Scores and Timer), and replace it with a question that has 4 buttons below it with different answer on each button. Also, make sure the timer starts counting down from 100 once the "Start Quiz" button is clicked. 
 
 var secondsLeft = 101
@@ -26,6 +27,10 @@ function setTime() {
           clearInterval(timerInterval)
           // *insert name of end screen* = "block";
       }
+
+      jumpHS.addEventListener("click", finalPage )
+
+
 
    
     if (secondsLeft <= 0) {
@@ -199,9 +204,39 @@ function goToHighScores (){
     highScorePage.style.display = "block";
     correct.style.display = "none";
     incorrect.style.display = "none";
+    questions1Start.style.display = "none";
+    questions2Start.style.display = "none";
+    questions3Start.style.display = "none";
+    questions4Start.style.display = "none";
+    questions5Start.style.display = "none";
 }
 
 // TODO: 7. If the "Go Back" button is clicked, it should sned you to the first page and start the process all over again
+
+var goBack = document.querySelector("#hsGoBack")
+
+goBack.addEventListener("click", function() {
+    goHome();
+})
+
+function goHome (){
+    highScorePage.style.display = "none";
+    displayText.style.display = "block"; 
+    selectStart.style.display = "block";
+    secondsLeft = 101
+    
+}
+
+// TODO: 7a. If the "View Highscores" button is clicked, it should send you to the Highscores page
+var jumpHS = document.querySelector("#viewHS")
+
+
+jumpHS.addEventListener("click", function() {
+    goToHighScores();
+    clearInterval(timerInterval);
+})
+
+
 
 // TODO: 8. If the "Clear High Scores" button is clicked, it should clear the text that showed the high scores, and should also delete the local storage. 
 

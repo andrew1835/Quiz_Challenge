@@ -3,9 +3,6 @@ body {
     color: white;
 }
 
-#highscoreLink {
-    color: gold;
-}
 
 .questions {
     padding-right: 4vw;
@@ -32,6 +29,13 @@ button {
     width: 60%;
 }
 
+#viewHS {
+    background-color: transparent;
+    border: none;
+    color: gold;
+    width: 25%;
+}
+
 #startQuiz {
     width: 10%;
 }
@@ -47,10 +51,11 @@ button {
 
 
 
-#title, #endTitle, #endCaption, #endP {
+#title, #caption, #endTitle, #endCaption, #endP {
     margin: auto;
     padding: 0.1vw;
-    width: 50%;
+    width: 70%;
+    text-align: center;
 }
 
 .endContainer {
