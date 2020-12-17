@@ -195,12 +195,57 @@ var submit = document.querySelector("#submit")
 
 var highScorePage = document.querySelector("#hsPage")
 
+var hsRankSpan = document.querySelector("#hsRank")
+
+var hsEntries = document.querySelector(".hsEntries")
+
+var initialsEntry = document.querySelector("#initials")
+
+var scores = [];
+
+init();
+
+function renderScores(){
+    hsRankSpan.textContent = scores.length;
+
+    // Render a new p for each submit
+    for (var i =0; i < scores.length; i++) {
+        var score = scores[i];
+
+        var p = document.createElement("p")
+        p.textContent = score;
+        p.setAttribute("data-index", i);
+
+        hsEntries.appendChild(p)
+    }
+}
+
+function init() {
+    var storedScores = JSON.parse(localStorage.getItem("scores"));
+    if (storedScores !== null) {
+        scores = storedScores
+    }
+    renderScores();
+}
+
+function storeScores() {
+    localStorage.setItem("scores", JSON.stringify(scores));
+}
+
+
 submit.addEventListener("click", function(event) {
     event.preventDefault
-    var initials = document.querySelector("#initials").value 
+    var initials = initialsEntry.value.trim();
     var hsData = document.querySelector("#hsResults")
+
     hsData.textContent = initials + "-" + secondsLeft
+
+    scores.push(initials)
+    initialsEntry.value = ""
+   
+    storeScores();
     goToHighScores();
+    renderScores();
 
     //  var scores = [{
     //      name: initials,  
