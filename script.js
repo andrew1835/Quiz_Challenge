@@ -28,7 +28,7 @@ function setTime() {
           // *insert name of end screen* = "block";
       }
 
-      jumpHS.addEventListener("click", finalPage )
+      jumpHS.addEventListener("click", finalPage)
 
 
 
@@ -195,8 +195,18 @@ var submit = document.querySelector("#submit")
 
 var highScorePage = document.querySelector("#hsPage")
 
-submit.addEventListener("click", function() {
+submit.addEventListener("click", function(event) {
+    event.preventDefault
+    var initials = document.querySelector("#initials").value 
+    var hsData = document.querySelector("#hsResults")
+    hsData.textContent = initials + "-" + secondsLeft
     goToHighScores();
+
+    //  var scores = [{
+    //      name: initials,  
+    //      score: secondsLeft
+    //  }]
+    // localStorage.setItem(highscores, JSON.stringify(scores))
 })
 
 function goToHighScores (){
@@ -231,10 +241,16 @@ function goHome (){
 var jumpHS = document.querySelector("#viewHS")
 
 
-jumpHS.addEventListener("click", function() {
-    goToHighScores();
-    clearInterval(timerInterval);
-})
+
+
+
+
+
+
+
+
+
+   
 
 
 
