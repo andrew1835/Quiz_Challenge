@@ -17,4 +17,7 @@ Link to GitHub Repository: https://github.com/andrew1835/Quiz_Challenge
 
 # Screenshots
 
-<img src =>
+<img src = "home.jpg" alt = "First Page">
+<img src = "question.jpg" alt = "Question Page">
+<img src = "Endscreen.jpg" alt = "Endscreen Page">
+<img src = "Highscores.jpg" alt = "Highscore Page">

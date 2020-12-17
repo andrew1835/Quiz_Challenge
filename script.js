@@ -216,7 +216,7 @@ function renderScores(){
         p.textContent = score;
         p.setAttribute("data-index", i);
 
-        hsEntries.appendChild(p)
+        
     }
 }
 
