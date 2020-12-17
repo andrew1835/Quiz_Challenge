@@ -1,0 +1,58 @@
+body {
+    background-color: indigo;
+    color: white;
+}
+
+#highscoreLink {
+    color: white;
+}
+
+.questions {
+    padding-right: 4vw;
+    padding-left: 4vw;
+    margin: auto;
+    width: 80%;
+}
+
+
+.container {
+    margin-bottom: 5vw;
+    padding: 5vw;
+}
+
+
+.quizButton {
+    text-align: center;
+}
+
+button {
+    background-color: gold;
+    padding: 1vw;
+    margin: 0.4vw;
+    width: 60%;
+}
+
+#startQuiz {
+    width: 10%;
+}
+
+
+#textContent {
+    padding-right: 4vw;
+    padding-left: 4vw;
+    margin: auto;
+    width: 80%;
+
+}
+
+
+
+#title, #endTitle, #endCaption, #endP {
+    margin: auto;
+    padding: 0.1vw;
+    width: 50%;
+}
+
+.endContainer {
+    color: gold;
+}
