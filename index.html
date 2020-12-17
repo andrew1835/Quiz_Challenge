@@ -16,7 +16,7 @@
                     <a href="#" id = "highscoreLink">View Highcores</a></a>
                 </div>
                 <div class="col-3">
-                    <p id="time"></p>
+                    <p id="time">Time: 0</p>
                 </div>
             </div>
          </div>
@@ -104,6 +104,9 @@
             </div>
         </section>
 
+        <p id = correct style="display: none;">Correct!</p>
+        <p id = incorrect style="display: none;">Wrong!</p>
+
 
         <!-- Creating the End Page -->
     <div class="endContainer">
@@ -125,8 +128,14 @@
 
     </div>
 
-
-
+<!-- The below code was taken from your notes on 12/11 and can be used for storing the high score list -->
+    <!-- var scores = [
+    {
+    name:”JR”,   (or maybe you should do name: *variable that selects id of initials*.textcontent and score: secondsLeft) 
+    score:1000
+    }
+    ]
+    localStorage.setItem(“highscores”, JSON.stringify(scores)) -->
 
 
 

@@ -7,6 +7,7 @@ var startButton = document.querySelector("#startQuiz")
 
 
 
+
 // TODO: 2. When the "Start Quiz" button is clicked, clear the main content of the page (except for High Scores and Timer), and replace it with a question that has 4 buttons below it with different answer on each button. Also, make sure the timer starts counting down from 100 once the "Start Quiz" button is clicked. 
 
 var secondsLeft = 101
@@ -29,9 +30,13 @@ function setTime() {
    
     if (secondsLeft <= 0) {
         clearInterval(timerInterval);
-         
-    
-        // show end screen
+        questions1Start.style.display = "none";
+        questions2Start.style.display = "none";
+        questions3Start.style.display = "none";
+        questions4Start.style.display = "none";
+        questions5Start.style.display = "none";
+        endPage.style.display = "block";
+        document.body.querySelector("#scoreDisplay").textContent = secondsLeft
     }
   
     }, 1000);
@@ -61,6 +66,8 @@ function setTime() {
     
 
     function docPoints(){
+    incorrect.style.display = "block";
+    correct.style.display = "none";
     if (secondsLeft>=20){
      secondsLeft = secondsLeft-20
     }
@@ -78,6 +85,10 @@ var questions2Start = document.querySelector("#questions2")
 var questions3Start = document.querySelector("#questions3")
 var questions4Start = document.querySelector("#questions4")
 var questions5Start = document.querySelector("#questions5")
+
+var endPage = document.querySelector("#endPage")
+var correct = document.querySelector("#correct")
+var incorrect= document.querySelector("#incorrect")
 
 var trueQ1 = document.querySelector("#correct1")
 
@@ -101,26 +112,38 @@ function startQuiz() {
 
 function firstQuestions() {
     questions1Start.style.display = "none";
+    correct.style.display = "block";
+    incorrect.style.display = "none";
     questions2Start.style.display = "block";
 
 }
 function secondQuestions() {
     questions2Start.style.display = "none";
+    correct.style.display = "block";
+    incorrect.style.display = "none";
     questions3Start.style.display = "block";
 
 }
 function thirdQuestions() {
     questions3Start.style.display = "none";
+    correct.style.display = "block";
+    incorrect.style.display = "none";
     questions4Start.style.display = "block";
 
 }
 function fourthQuestions() {
     questions4Start.style.display = "none";
+    correct.style.display = "block";
+    incorrect.style.display = "none";
     questions5Start.style.display = "block";
 
 }
 function fifthQuestions() {
     questions5Start.style.display = "none";
+    endPage.style.display = "block";
+    correct.style.display = "block";
+    incorrect.style.display = "none";
+    document.body.querySelector("#scoreDisplay").textContent = secondsLeft
  
 
 }
@@ -132,6 +155,8 @@ startButton.addEventListener("click", function() {
 
 trueQ1.addEventListener("click", function() {
     firstQuestions();
+    
+
 })
 
 trueQ2.addEventListener("click", function() {
