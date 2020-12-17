@@ -56,3 +56,7 @@ button {
 .endContainer {
     color: gold;
 }
+
+.hsButtons {
+    width: 40%;
+}

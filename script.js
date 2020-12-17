@@ -186,6 +186,21 @@ trueQ5.addEventListener("click", function() {
 
 // TODO: 6. When the submit button is clicked, save the initials and the score to the user's local storage. Then, clear the page (completely clear. No more high score and High Scores in the top right and left) and display a page that has "High Scores" with an h2 tag, and below that has a text with the ranking fist, the initials second, and the score last. Below that, have two buttons with one saying "Go Back" and one saying "Clear High Scores." 
 
+var submit = document.querySelector("#submit")
+
+var highScorePage = document.querySelector("#hsPage")
+
+submit.addEventListener("click", function() {
+    goToHighScores();
+})
+
+function goToHighScores (){
+    endPage.style.display = "none";
+    highScorePage.style.display = "block";
+    correct.style.display = "none";
+    incorrect.style.display = "none";
+}
+
 // TODO: 7. If the "Go Back" button is clicked, it should sned you to the first page and start the process all over again
 
 // TODO: 8. If the "Clear High Scores" button is clicked, it should clear the text that showed the high scores, and should also delete the local storage. 

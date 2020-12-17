@@ -111,20 +111,33 @@
         <!-- Creating the End Page -->
     <div class="endContainer">
         <main id="endPage" style="display: none">
+            <!-- Row with text Enter initials:, followed by an input field, followed by a Submit button -->
             <h2 id="endTitle">All Done!</h2>
             <p id="endCaption">Your final score is <span id = scoreDisplay></span></p>
             <div class="inputScore" style="display: block">
                     <p id = "endP">Enter initials: 
                         <span><input type="text" id = "initials" placeholder="Initials here"></span>
-                        <span><button class = submit>Submit</button></span> 
+                        <span><button id = "submit">Submit</button></span> 
                     </p>
             </div>
         </main>
-
-        <!-- Row with text Enter initials:, followed by an input field, followed by a Submit button -->
-        
-
     </div>
+
+
+    <main id="hsPage" style="display: none">
+        <!-- High Scores in the top row with H2, then the actual data in the row below (with a different background color), then two buttons in the row below (Go Back, and Clear Highscores) -->
+        <h1 id="hsTitle">Highscores</h1>
+        <div class="hsRow">
+            <!-- You will change the background color in CSS -->
+            <p>Placeholder for highscores</p>
+        </div>
+        <div class="hsButtons" style="display: block">
+                
+                <button id = hsGoBack>Go Back</button> 
+                <button id = hsClear>Clear Highscores</button> 
+                     
+        </div>
+    </main>
 
     </div>
 
