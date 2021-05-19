@@ -16,71 +16,71 @@ var secondsLeft = 101
 // The below code calls functions when you click on the "Start Quiz" button
 
 function setTime() {
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timeEl.textContent = "Time: " + secondsLeft;
-
-      
-        
-      document.getElementById("correct5").addEventListener("click", finalPage); 
-      function finalPage(){
-          clearInterval(timerInterval)
-          // *insert name of end screen* = "block";
-      }
-
-      jumpHS.addEventListener("click", finalPage)
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timeEl.textContent = "Time: " + secondsLeft;
 
 
 
-   
-    if (secondsLeft <= 0) {
-        clearInterval(timerInterval);
-        questions1Start.style.display = "none";
-        questions2Start.style.display = "none";
-        questions3Start.style.display = "none";
-        questions4Start.style.display = "none";
-        questions5Start.style.display = "none";
-        endPage.style.display = "block";
-        document.body.querySelector("#scoreDisplay").textContent = secondsLeft
-    }
-  
+        document.getElementById("correct5").addEventListener("click", finalPage);
+        function finalPage() {
+            clearInterval(timerInterval)
+            // *insert name of end screen* = "block";
+        }
+
+        jumpHS.addEventListener("click", finalPage)
+
+
+
+
+        if (secondsLeft <= 0) {
+            clearInterval(timerInterval);
+            questions1Start.style.display = "none";
+            questions2Start.style.display = "none";
+            questions3Start.style.display = "none";
+            questions4Start.style.display = "none";
+            questions5Start.style.display = "none";
+            endPage.style.display = "block";
+            document.body.querySelector("#scoreDisplay").textContent = secondsLeft
+        }
+
     }, 1000);
-  }
+}
 
 
-    document.querySelector(".wrong11").addEventListener("click", docPoints); 
-    document.querySelector(".wrong12").addEventListener("click", docPoints); 
-    document.querySelector(".wrong13").addEventListener("click", docPoints); 
+document.querySelector(".wrong11").addEventListener("click", docPoints);
+document.querySelector(".wrong12").addEventListener("click", docPoints);
+document.querySelector(".wrong13").addEventListener("click", docPoints);
 
-    document.querySelector(".wrong21").addEventListener("click", docPoints); 
-    document.querySelector(".wrong22").addEventListener("click", docPoints); 
-    document.querySelector(".wrong23").addEventListener("click", docPoints); 
+document.querySelector(".wrong21").addEventListener("click", docPoints);
+document.querySelector(".wrong22").addEventListener("click", docPoints);
+document.querySelector(".wrong23").addEventListener("click", docPoints);
 
-    document.querySelector(".wrong31").addEventListener("click", docPoints); 
-    document.querySelector(".wrong32").addEventListener("click", docPoints); 
-    document.querySelector(".wrong33").addEventListener("click", docPoints); 
+document.querySelector(".wrong31").addEventListener("click", docPoints);
+document.querySelector(".wrong32").addEventListener("click", docPoints);
+document.querySelector(".wrong33").addEventListener("click", docPoints);
 
-    document.querySelector(".wrong41").addEventListener("click", docPoints); 
-    document.querySelector(".wrong42").addEventListener("click", docPoints); 
-    document.querySelector(".wrong43").addEventListener("click", docPoints); 
+document.querySelector(".wrong41").addEventListener("click", docPoints);
+document.querySelector(".wrong42").addEventListener("click", docPoints);
+document.querySelector(".wrong43").addEventListener("click", docPoints);
 
-    document.querySelector(".wrong51").addEventListener("click", docPoints); 
-    document.querySelector(".wrong52").addEventListener("click", docPoints); 
-    document.querySelector(".wrong53").addEventListener("click", docPoints); 
- 
-    
+document.querySelector(".wrong51").addEventListener("click", docPoints);
+document.querySelector(".wrong52").addEventListener("click", docPoints);
+document.querySelector(".wrong53").addEventListener("click", docPoints);
 
-    function docPoints(){
+
+
+function docPoints() {
     incorrect.style.display = "block";
     correct.style.display = "none";
-    if (secondsLeft>=20){
-     secondsLeft = secondsLeft-20
+    if (secondsLeft >= 20) {
+        secondsLeft = secondsLeft - 20
     }
     else {
-        secondsLeft = secondsLeft - (secondsLeft-1)
+        secondsLeft = secondsLeft - (secondsLeft - 1)
     }
-     
-    }
+
+}
 
 var displayText = document.querySelector("#textContent")
 var selectStart = document.querySelector(".quizButton")
@@ -93,7 +93,7 @@ var questions5Start = document.querySelector("#questions5")
 
 var endPage = document.querySelector("#endPage")
 var correct = document.querySelector("#correct")
-var incorrect= document.querySelector("#incorrect")
+var incorrect = document.querySelector("#incorrect")
 
 var trueQ1 = document.querySelector("#correct1")
 
@@ -105,11 +105,11 @@ var trueQ4 = document.querySelector("#correct4")
 
 var trueQ5 = document.querySelector("#correct5")
 
- 
+
 
 function startQuiz() {
-    displayText.style.display = "none"; 
-    selectStart.style.display = "none"; 
+    displayText.style.display = "none";
+    selectStart.style.display = "none";
     questions1Start.style.display = "block";
     // document.body.appendChild("")
 
@@ -149,34 +149,34 @@ function fifthQuestions() {
     correct.style.display = "block";
     incorrect.style.display = "none";
     document.body.querySelector("#scoreDisplay").textContent = secondsLeft
- 
+
 
 }
 
-startButton.addEventListener("click", function() {
+startButton.addEventListener("click", function () {
     setTime();
     startQuiz();
 })
 
-trueQ1.addEventListener("click", function() {
+trueQ1.addEventListener("click", function () {
     firstQuestions();
-    
+
 
 })
 
-trueQ2.addEventListener("click", function() {
+trueQ2.addEventListener("click", function () {
     secondQuestions();
 })
 
-trueQ3.addEventListener("click", function() {
+trueQ3.addEventListener("click", function () {
     thirdQuestions();
 })
 
-trueQ4.addEventListener("click", function() {
+trueQ4.addEventListener("click", function () {
     fourthQuestions();
 })
 
-trueQ5.addEventListener("click", function() {
+trueQ5.addEventListener("click", function () {
     fifthQuestions();
 })
 
@@ -205,18 +205,18 @@ var scores = [];
 
 init();
 
-function renderScores(){
+function renderScores() {
     hsRankSpan.textContent = scores.length;
 
     // Render a new p for each submit
-    for (var i =0; i < scores.length; i++) {
+    for (var i = 0; i < scores.length; i++) {
         var score = scores[i];
 
         var p = document.createElement("p")
         p.textContent = score;
         p.setAttribute("data-index", i);
 
-        
+
     }
 }
 
@@ -233,7 +233,7 @@ function storeScores() {
 }
 
 
-submit.addEventListener("click", function(event) {
+submit.addEventListener("click", function (event) {
     event.preventDefault
     var initials = initialsEntry.value.trim();
     var hsData = document.querySelector("#hsResults")
@@ -242,7 +242,7 @@ submit.addEventListener("click", function(event) {
 
     scores.push(initials)
     initialsEntry.value = ""
-   
+
     storeScores();
     goToHighScores();
     renderScores();
@@ -254,7 +254,7 @@ submit.addEventListener("click", function(event) {
     // localStorage.setItem(highscores, JSON.stringify(scores))
 })
 
-function goToHighScores (){
+function goToHighScores() {
     endPage.style.display = "none";
     highScorePage.style.display = "block";
     correct.style.display = "none";
@@ -270,16 +270,16 @@ function goToHighScores (){
 
 var goBack = document.querySelector("#hsGoBack")
 
-goBack.addEventListener("click", function() {
+goBack.addEventListener("click", function () {
     goHome();
 })
 
-function goHome (){
+function goHome() {
     highScorePage.style.display = "none";
-    displayText.style.display = "block"; 
+    displayText.style.display = "block";
     selectStart.style.display = "block";
     secondsLeft = 101
-    
+
 }
 
 // TODO: 7a. If the "View Highscores" button is clicked, it should send you to the Highscores page
@@ -289,13 +289,13 @@ var jumpHS = document.querySelector("#viewHS")
 
 
 
+// Fix the local storage
 
 
 
 
 
 
-   
 
 
 
