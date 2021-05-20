@@ -149,8 +149,6 @@ function fifthQuestions() {
     correct.style.display = "block";
     incorrect.style.display = "none";
     document.body.querySelector("#scoreDisplay").textContent = secondsLeft
-
-
 }
 
 startButton.addEventListener("click", function () {
@@ -160,8 +158,6 @@ startButton.addEventListener("click", function () {
 
 trueQ1.addEventListener("click", function () {
     firstQuestions();
-
-
 })
 
 trueQ2.addEventListener("click", function () {
@@ -197,6 +193,8 @@ var highScorePage = document.querySelector("#hsPage")
 
 var hsRankSpan = document.querySelector("#hsRank")
 
+var scoreList = document.querySelector("#scoreList")
+
 var hsEntries = document.querySelector(".hsEntries")
 
 var initialsEntry = document.querySelector("#initials")
@@ -206,15 +204,15 @@ var scores = [];
 init();
 
 function renderScores() {
-    hsRankSpan.textContent = scores.length;
-
+    scoreList.innerHTML = ""
     // Render a new p for each submit
     for (var i = 0; i < scores.length; i++) {
-        var score = scores[i];
 
-        var p = document.createElement("p")
-        p.textContent = score;
-        p.setAttribute("data-index", i);
+        var score = scores[i];
+        var li = document.createElement("li")
+        li.textContent = score.initials + "-" + score.score;
+        li.setAttribute("data-index", i);
+        scoreList.appendChild(li)
 
 
     }
@@ -222,10 +220,12 @@ function renderScores() {
 
 function init() {
     var storedScores = JSON.parse(localStorage.getItem("scores"));
+    console.log(storedScores)
     if (storedScores !== null) {
         scores = storedScores
+        console.log(scores)
     }
-    renderScores();
+    // renderScores();
 }
 
 function storeScores() {
@@ -236,11 +236,12 @@ function storeScores() {
 submit.addEventListener("click", function (event) {
     event.preventDefault
     var initials = initialsEntry.value.trim();
-    var hsData = document.querySelector("#hsResults")
+    var score = document.querySelector("#scoreDisplay").textContent
 
-    hsData.textContent = initials + "-" + secondsLeft
 
-    scores.push(initials)
+    scores.push({ initials: initials })
+    scores[scores.length - 1].score = score
+    console.log(scores)
     initialsEntry.value = ""
 
     storeScores();
@@ -256,6 +257,8 @@ submit.addEventListener("click", function (event) {
 
 function goToHighScores() {
     endPage.style.display = "none";
+    displayText.style.display = "none";
+    selectStart.style.display = "none";
     highScorePage.style.display = "block";
     correct.style.display = "none";
     incorrect.style.display = "none";
@@ -284,6 +287,15 @@ function goHome() {
 
 // TODO: 7a. If the "View Highscores" button is clicked, it should send you to the Highscores page
 var jumpHS = document.querySelector("#viewHS")
+var hsClear = document.querySelector("#hsClear")
+
+jumpHS.addEventListener("click", goToHighScores)
+hsClear.addEventListener("click", function () {
+    scores = []
+    localStorage.removeItem("scores")
+    console.log(localStorage)
+    scoreList.innerHTML = ""
+})
 
 
 
