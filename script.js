@@ -229,6 +229,7 @@ function init() {
 }
 
 function storeScores() {
+    console.log(scores)
     localStorage.setItem("scores", JSON.stringify(scores));
 }
 
@@ -242,6 +243,7 @@ submit.addEventListener("click", function (event) {
     scores.push({ initials: initials })
     scores[scores.length - 1].score = score
     console.log(scores)
+    scores.sort(compare)
     initialsEntry.value = ""
 
     storeScores();
@@ -289,13 +291,30 @@ function goHome() {
 var jumpHS = document.querySelector("#viewHS")
 var hsClear = document.querySelector("#hsClear")
 
-jumpHS.addEventListener("click", goToHighScores)
+jumpHS.addEventListener("click", function () {
+    goToHighScores();
+    renderScores();
+})
 hsClear.addEventListener("click", function () {
     scores = []
     localStorage.removeItem("scores")
     console.log(localStorage)
     scoreList.innerHTML = ""
 })
+
+function compare(a, b) {
+    var scoreA = a.score
+    var scoreB = b.score
+    var comparison = 0
+    if (scoreA > scoreB) {
+        comparison = 1
+    }
+    else if (scoreA < scoreB) {
+        comparison = -1
+    }
+    return comparison * -1
+
+}
 
 
 
