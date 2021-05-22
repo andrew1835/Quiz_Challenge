@@ -319,34 +319,3 @@ function compare(a, b) {
 
 
 
-
-// Fix the local storage
-
-
-
-
-
-
-
-
-
-// TODO: 8. If the "Clear High Scores" button is clicked, it should clear the text that showed the high scores, and should also delete the local storage. 
-
-
-
-// 1a. In the index.html file, create all the appropriate tags with IDs/Classes associated with them. Don't put any actual text content in (except for the High Scores link and the timer). You will then create variables in JS that refer to these tags and that push content inside of those tags depending on what button is clicked. I think you can also just create variables and have them be equal to strings which are the text. You will then set the text content equal to those variables. 
-// 1b. Create the timer and put it in the top right. Make sure that the function only runs when the "Start Quiz" button is clicked and that the interval is set to 1000 milliseconds. 
-// 1c. Create the "High Scores" link at the top of the page, and have it link to nothing (#) for now
-
-
-
-// The real question you need to ask is if you need to create multiple HTML pages. I think that you only need two. One for the high scores page, and one for everything else. You don't think you need a new HTML page for each quiz question. Since the formatting for all the questions is the same, it should be easy to just push different content into those same elements when an answer is clicked. 
-
-
-
-
-// Q1: "______ won best picture in 2002:" Answer: A Beautiful Mind    Wrong Answers: Moulin Rouge, Good Will Hunting, Gladiator
-// Q2: "This was the first film shot in color:" Answer: Cupid Angling    Wrong Answers: The Wizard of Oz, Gone with the Wind, Snow White 
-// Q3: "This, known for directing gangster movies such as "Goodfellas" and "The Irishman", has been received 9 best picture nominations. What is his name?"  Answer: Martin Scorsese   Wrong Answers: Quentin Tarantino, Steven Spielberg, Francis Ford Coppola
-// Q4: "This actor finally the Academy Award for Best Actor in 2016, after being nominated for Best Actor thrice in the past and losing each time" Answer: Leonardo Dicaprio    Wrong Answers: Brad Pitt, Jake Gyllenhaall, Benicio del Toro
-// Q5: "This horror film, released in 1973, was so shocking that it actually caused many theatre-goers around the world to vomit and faint. The film was so controversial that it was banned in several countreis around the world." Answer: "The Exorcist"    Wrong Answers: "The Poltergeist", "The Shining", "Halloween", "Evil Dead"
